@@ -2,12 +2,21 @@ package controllers
 
 import (
 	"OAuth-Go/configs"
+	"OAuth-Go/helpers"
 	"context"
 	"fmt"
-	"io/ioutil"
+	"io"
 	"log"
 	"net/http"
 )
+
+func OauthGoogleLogin(w http.ResponseWriter, r *http.Request) {
+
+	// Create oauthState cookie
+	oauthState := helpers.GenerateStateOauthCookie(w)
+	u := configs.GoogleOauthConfig.AuthCodeURL(oauthState)
+	http.Redirect(w, r, u, http.StatusTemporaryRedirect)
+}
 
 func OauthGoogleCallback(w http.ResponseWriter, r *http.Request) {
 	// Read oauthState from Cookie
@@ -26,9 +35,6 @@ func OauthGoogleCallback(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	// GetOrCreate User in your db.
-	// Redirect or response with a token.
-	// More code .....
 	fmt.Fprintf(w, "UserInfo: %s\n", data)
 }
 
@@ -44,7 +50,7 @@ func getUserDataFromGoogle(code string) ([]byte, error) {
 		return nil, fmt.Errorf("failed getting user info: %s", err.Error())
 	}
 	defer response.Body.Close()
-	contents, err := ioutil.ReadAll(response.Body)
+	contents, err := io.ReadAll(response.Body)
 	if err != nil {
 		return nil, fmt.Errorf("failed read response: %s", err.Error())
 	}

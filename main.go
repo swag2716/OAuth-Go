@@ -11,8 +11,7 @@ import (
 )
 
 func main() {
-
-	err := godotenv.Load("./.env")
+	err := godotenv.Load(".env")
 
 	if err != nil {
 		log.Fatal("error: ", err)
@@ -21,7 +20,7 @@ func main() {
 	port := os.Getenv("PORT")
 
 	if port == "" {
-		log.Fatal(port)
+		port = "8000"
 	}
 
 	router := mux.NewRouter()

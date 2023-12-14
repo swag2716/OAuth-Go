@@ -13,4 +13,6 @@ func Routes(router *mux.Router) {
 	// OauthGoogle
 	router.HandleFunc("/auth/google/login", controllers.OauthGoogleLogin)
 	router.HandleFunc("/auth/google/callback", controllers.OauthGoogleCallback)
+	router.HandleFunc("/auth/github/login", controllers.OauthGithubLogin)
+	router.HandleFunc("/auth/github/callback", controllers.OauthGithubCallback)
 }
