@@ -14,17 +14,6 @@ This project demonstrates the implementation of an OAuth 2.0 system with Single 
   - [Google OAuth](#google-oauth)
   - [GitHub OAuth](#github-oauth)
 - [Testing](#testing)
-- [Contributing](#contributing)
-- [License](#license)
-
-
-
-## Getting Started
-
-
-
-
-
 
 
 ## Features
@@ -34,12 +23,24 @@ This project demonstrates the implementation of an OAuth 2.0 system with Single 
 - Basic user information retrieval from respective identity providers.
 
 
-## Prerequisites
+
+
+
+
+
+
+
+
+
+
+
+
+### Prerequisites
 
 - Go installed on your machine.
 - Google OAuth credentials (client ID and client secret).
 - GitHub OAuth credentials (client ID and client secret).
-## Installation
+### Installation
 
 1. Clone the repository:
 
@@ -54,7 +55,7 @@ This project demonstrates the implementation of an OAuth 2.0 system with Single 
   ```
   
     
-## Configuration
+### Configuration
 
 - For Google OAuth:
 ```bash
@@ -66,9 +67,9 @@ export GOOGLE_OAUTH_CLIENT_SECRET=your-google-client-secret
 export GITHUB_OAUTH_CLIENT_ID=your-github-client-id
 export GITHUB_OAUTH_CLIENT_SECRET=your-github-client-secret
 ```
-## Usage
+### Usage
 
-### Google OAuth
+#### Google OAuth
 
 1. Start the server:
 ```bash
@@ -80,7 +81,7 @@ go run main.go
 
 4. After successful authentication, you will be redirected back to the home page with user information displayed
 
-### Github OAuth
+#### Github OAuth
 
 1. Start the server:
 ```bash
@@ -93,7 +94,7 @@ go run main.go
 4. After successful authentication, you will be redirected back to the home page with user information displayed
 
 
-## Testing
+### Testing
 
 Run the tests to ensure the correct functionality of the OAuth system:
 
