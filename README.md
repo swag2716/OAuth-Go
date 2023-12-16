@@ -22,18 +22,7 @@ This project demonstrates the implementation of an OAuth 2.0 system with Single 
 - GitHub OAuth login with SSO support.
 - Basic user information retrieval from respective identity providers.
 
-
-
-
-
-
-
-
-
-
-
-
-
+## Getting Started
 
 ### Prerequisites
 
