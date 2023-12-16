@@ -1,7 +1,7 @@
 package configs
 
 import (
-	"os"
+	"OAuth-Go/helpers"
 
 	"golang.org/x/oauth2"
 	"golang.org/x/oauth2/github"
@@ -11,25 +11,17 @@ import (
 const OauthGoogleUrlAPI = "https://www.googleapis.com/oauth2/v2/userinfo?access_token="
 const OauthGithubUrlAPI = "https://api.github.com/user"
 
-// func init() {
-// 	err := godotenv.Load(".env")
-
-// 	if err != nil {
-// 		log.Fatal("error: ", err)
-// 	}
-// }
-
 var GoogleOauthConfig = &oauth2.Config{
 	RedirectURL:  "http://localhost:8000/auth/google/callback",
-	ClientID:     os.Getenv("GOOGLE_OAUTH_CLIENT_ID"),
-	ClientSecret: os.Getenv("GOOGLE_OAUTH_CLIENT_SECRET"),
+	ClientID:     helpers.GetGoogleClientID(),
+	ClientSecret: helpers.GetGoogleClientSecret(),
 	Scopes:       []string{"https://www.googleapis.com/auth/userinfo.email"},
 	Endpoint:     google.Endpoint,
 }
 
 var GithubOauthConfig = &oauth2.Config{
-	ClientID:     os.Getenv("GITHUB_OAUTH_CLIENT_ID"),
-	ClientSecret: os.Getenv("GITHUB_OAUTH_CLIENT_SECRET"),
+	ClientID:     helpers.GetGithubClientID(),
+	ClientSecret: helpers.GetGithubClientSecret(),
 	RedirectURL:  "http://localhost:8000/auth/github/callback",
 	Scopes:       []string{"user:email"},
 	Endpoint:     github.Endpoint,

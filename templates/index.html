@@ -1,38 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>OAUTH-GO</title>
 </head>
 <body>
     <div class="container">
         <form action="/">
           <div class="row">
             <h2 style="text-align:center">Login with Social Media or Manually</h2>
-            <div class="vl">
-              <span class="vl-innertext">or</span>
-            </div>
+
+            <div style="text-align:center" class="col">
       
-            <div class="col">
+              <input type="text" name="username" placeholder="Username" required><br><br>
+              <input type="password" name="password" placeholder="Password" required><br><br>
+              <input type="submit" value="Login">
+            </div>
+            <br>
+      
+            <div style="text-align:center" class="col">
               <a href="/auth/google/login" class="google btn">
                 <i class="fa fa-google fa-fw"></i> Login with Google
               </a>
+              <br><br>
               <a href="/auth/github/login" class="google btn">
                 <i class="fa fa-github fa-fw"></i> Login with github
               </a>
             </div>
       
-            <div class="col">
-              <div class="hide-md-lg">
-                <p>Or sign in manually:</p>
-              </div>
-      
-              <input type="text" name="username" placeholder="Username" required>
-              <input type="password" name="password" placeholder="Password" required>
-              <input type="submit" value="Login">
-            </div>
+            
       
           </div>
         </form>
